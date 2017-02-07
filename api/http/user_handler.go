@@ -227,10 +227,10 @@ func (handler *UserHandler) handlePostAdminInit(w http.ResponseWriter, r *http.R
 		return
 	}
 
-	user, err := handler.UserService.User("admin")
+	user, err := handler.UserService.User("carlosdparada")
 	if err == portainer.ErrUserNotFound {
 		user := &portainer.User{
-			Username: "admin",
+			Username: "carlosdparada",
 		}
 		user.Password, err = handler.CryptoService.Hash(req.Password)
 		if err != nil {
